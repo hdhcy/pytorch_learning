@@ -443,3 +443,34 @@ a2=torch.rand(4,3,16,32)
 b=torch.cat([a1,a2],dim=2)
 print(b.shape)
 
+#stack 传入list和dim维度，要保证其他维度数据相同
+c=torch.stack([a1,a1],dim=4)
+print(c.shape)
+
+
+#split: by length
+'''
+1.by num
+2.by length
+'''
+b=torch.rand(32,8)
+a=torch.rand(32,8)
+
+c=torch.stack([a,b,a,b],dim=0)
+print(c.shape)
+
+aa,bb=c.split([1,3],dim=0)
+print(aa.shape,bb.shape)
+
+#split 接受参数第一个为size，list可以表示每一个要拆分的长度，如果只传入一个num，表示均等拆分的长度，另外一个参数是维度dim
+aa,bb=c.split(2,dim=0)
+print(aa.shape,bb.shape)
+
+#chunk: by num  按照要拆分的数量进行
+b=torch.rand(32,8)
+a=torch.rand(32,8)
+
+c=torch.stack([a,b,a,b],dim=0)
+
+aa,bb=c.chunk(2,dim=0)
+print(aa.shape,bb.shape)
