@@ -405,7 +405,7 @@ memory consumption
 is it broadcasting-able?
 Match from Last dim!
     if current dim=1,expand to same
-    if either has no dim,insert one dim and expand to same
+    if either has no dim,insert 第一章python入门 dim and expand to same
     other Not broadcasting-able
     
 How to understand this behavior?
