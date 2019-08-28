@@ -2,8 +2,21 @@
 Author: hdhcy
 Email: 982768496@qq.com
 
-date: 2019/8/26 16:33
+date: 2019/8/26 21:51
 '''
+'''
+Reduce Overfitting
+    More data
+    Constraint model complexity
+        shallow
+        regularization
+    Dropout
+    Data argumentation
+    Early Stopping
+'''
+
+#Regularization
+
 import torch
 import torchvision
 import torch.nn as nn
@@ -56,10 +69,24 @@ viz=Visdom()
 viz.line([0.0],[0.0],win='train_loss',opts=dict(title='train loss'))
 viz.line([[0.0,0.0]],[0.0],win='test',opts=dict(title='test loss and acc',
                                                legend=['loss','acc']))
-
+#L2-regularization 设置weight_decay 迫使||w||->0
 net = MLP()
-optimizer = optim.SGD(net.parameters(), lr=learning_rate)
+optimizer = optim.Adam(net.parameters(), lr=learning_rate,weight_decay=0.01)
 criteon = nn.CrossEntropyLoss()
+
+'''
+#L1-regularization
+regularization_loss=0
+for param in net.parameters():
+    regularization_loss+=torch.sum(torch.abs(param))
+
+classify_loss=criteon(logits,target)
+loss=classify_loss+0.01*regularization_loss
+
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+'''
 
 global_step=0
 for epoch in range(epochs):
