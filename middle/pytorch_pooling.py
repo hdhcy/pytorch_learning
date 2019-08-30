@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-x=torch.rand(1,16,14,14)
+x=torch.rand(1,16,18,18)
 
 #window_size=2 stride=2
 layer=nn.MaxPool2d(2,stride=2)

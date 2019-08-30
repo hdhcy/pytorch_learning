@@ -8,11 +8,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 #input kernelnumber stride padding
-layer=nn.Conv2d(1,3,kernel_size=3,stride=1,padding=0)
-x=torch.rand(1,1,28,28)
+layer=nn.Conv2d(3,6,kernel_size=5,stride=1,padding=0)
+x=torch.rand(4,3,28,28)
 out=layer.forward(x)
 print(out.shape)
+
+
+'''
 
 layer=nn.Conv2d(1,3,kernel_size=3,stride=1,padding=1)
 x=torch.rand(1,1,28,28)
@@ -42,5 +46,5 @@ print(out.shape)
 
 out=F.conv2d(x,w,b,stride=2,padding=2)
 print(out.shape)
-
+'''
 

@@ -14,11 +14,11 @@ Feature scaling
         normalization=transforms.Normalize(mean=[0.485,0.456,0.406],
                                            std=[0.229,0.224,0.225])
     Batch Normalization
-        Batch Norm 
+        Batch Norm
         Layer Norm
         Instance Norm
         Group Norm
-        
+
         Advantages
             Converge faster
             Better performance
@@ -26,20 +26,20 @@ Feature scaling
                 stable
                 larger learning rate
 '''
-x=torch.rand(100,16,28,28)
+x = torch.rand(100, 16, 28, 28)
 
-#chanel的数量
-layer=nn.BatchNorm2d(16)
-out=layer(x)
-#u
+# chanel的数量
+layer = nn.BatchNorm2d(16)
+out = layer(x)
+# u
 print(layer.running_mean)
-#sig
+# sig
 print(layer.running_var)
 
 
-x=torch.rand(1,16,7,7)
-layer=nn.BatchNorm2d(16)
-out=layer(x)
+x = torch.rand(1, 16, 7, 7)
+layer = nn.BatchNorm2d(16)
+out = layer(x)
 print(out.shape)
 
 print(layer.weight)
@@ -53,19 +53,3 @@ layer.eval()
 print(vars(layer))
 print(layer.eval())
 print(vars(layer))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
