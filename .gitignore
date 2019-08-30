@@ -3,3 +3,4 @@
 /middle/mnist
 .gitignore
 book/dataset
+middle/cifar
