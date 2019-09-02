@@ -4,3 +4,5 @@
 .gitignore
 book/dataset
 middle/cifar
+DeepLearning_Pytorch/.idea
+DeepLearning_Pytorch/code-of-learn-deep-learning-with-pytorch

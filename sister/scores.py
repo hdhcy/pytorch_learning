@@ -13,7 +13,7 @@ test=pd.read_excel(r'C:\Users\98276\Downloads\sister.xls')
 table=test.loc[:,['学年','学期','学分','绩点']]
 table1=table[table.学年=='2016-2017']
 table2=table1[table1.学期==2]
-print(table2)
+#print(table2)
 
 
 data=xlrd.open_workbook('C:\\Users\\98276\\Downloads\\sister.xls')
@@ -39,14 +39,16 @@ xuefen=np.mat(xuefen)
 chengji=np.mat(chengji)
 
 xuefen_sum=xuefen.sum()
-print('总学分:  ',xuefen_sum)
+#print('总学分:  ',xuefen_sum)
 total=xuefen*chengji.T
 
-print('绩点:  ',(total/xuefen_sum))
+#print('绩点:  ',(total/xuefen_sum))
 
-gpa=Gpa(r'C:\Users\98276\Downloads\sister.xls','2018-2019',1)
+gpa=Gpa(r'C:\Users\98276\Downloads\liuyang.xls','2018-2019',1)
 gpa.all_compute()
 gpa.year_compute()
 gpa.confim_compute()
+
+list=[]
 
 
