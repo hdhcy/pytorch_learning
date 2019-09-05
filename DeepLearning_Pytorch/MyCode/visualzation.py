@@ -4,7 +4,6 @@ Email: 982768496@qq.com
 
 date: 2019/9/5 10:25
 '''
-import pandas as pd
 import matplotlib.pyplot as plt
 
 def loadData(fileName):
