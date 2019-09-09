@@ -25,7 +25,8 @@ class Gpa:
         data = pd.read_excel(self.locals)
         xuefen = data['学分']
         jidian = data['绩点']
-        print('总学分: ', xuefen.sum())
+        print('总学分: ', xuefen.sum(),'课程数: ',xuefen.size)
+        #print('总学分*总绩点',(xuefen * jidian).sum())
         print('总绩点: ', (xuefen * jidian).sum() / xuefen.sum())
 
     # 计算指定学年的绩点

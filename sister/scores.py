@@ -44,11 +44,8 @@ total=xuefen*chengji.T
 
 #print('绩点:  ',(total/xuefen_sum))
 
-gpa=Gpa(r'C:\Users\98276\Downloads\sister.xls','2018-2019',2)
+gpa=Gpa(r'C:\Users\98276\Downloads\chengji.xls')
 gpa.all_compute()
-gpa.year_compute()
-gpa.confim_compute()
 
-list=[]
 
 
